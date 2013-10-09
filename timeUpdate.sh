@@ -34,8 +34,8 @@ if [ ! -f "$tzBackup/$tzDataCurrentFile" ] || [ ! -f "$tzBackup/$tzCodeCurrentFi
 	rsync ${RsyncServer}${tzCodeCurrentPath} .
 	rsync ${RsyncServer}${tzDataCurrentPath} .
 
-	cp "$tzDataCurrentFile" "$tzBackup/$tzDataCurrentFile"
-	cp "$tzCodeCurrentFile" "$tzBackup/$tzCodeCurrentFile"	
+	cp "$tzDataCurrentFile" "../$tzBackup/$tzDataCurrentFile"
+	cp "$tzCodeCurrentFile" "../$tzBackup/$tzCodeCurrentFile"	
 
 	gzip -dc ${tzDataCurrentFile} | tar -xf -
 	gzip -dc ${tzCodeCurrentFile} | tar -xf -
