@@ -40,7 +40,7 @@ if [ ! -f "$tzBackup/$tzDataCurrentFile" ] || [ ! -f "$tzBackup/$tzCodeCurrentFi
 	gzip -dc ${tzDataCurrentFile} | tar -xf -
 	gzip -dc ${tzCodeCurrentFile} | tar -xf -
 
-	make "TOPDIR=`pwd`/bin-timezone" install > /dev/null 2>&1
+	make "TOPDIR=`pwd`/tz_dir" install > /dev/null 2>&1
 	cp -fr ./bin-timezone/etc/zoneinfo/* ${timeZonePath}
 	echo $timeZone > /etc/timezone
 	cp -f "$timeZonePath/$timeZone" /etc/localtime
